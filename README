@@ -1,0 +1,49 @@
+Radu Cosmin
+323 CB
+
+Tema 1 POO - Cel mai scurt drum intre doua puncte
+
+Pentru modelarea tipurilor de vehicule am utilizat conceptul de mostenire.
+Atfel, am creat clasa Vehicul cu metodele aferente cat si clasele Bicicleta,
+Motocicleta, Autoturism si Camion ce mostenesc clasa Vehicul, ele avand
+un constructor fara parametrii ce apeleaza constructorul clasei parinte cu
+particularitatile fiecarui vehicul.
+
+Am utilzat polimorfismul in momentul in care am creat un nou vehicul in clasa
+Main. Pe baza sirului dat ca parametru initializam un nou tip de vehicul, in
+ciuda faptului ca variabila era de tip Vehicul. De asemenea, am mai utilizat
+polimorfismul in clasa Main prin creearea a doua metode cu numele prelucrare,
+dar cu parametrii diferiti.
+
+Pentru abstractizare am definit interfata Coada ce contine metodele aferente,
+aceasta fiind implementata in clada CoadaPrioritate deoarece implementarea
+acestor metode poate fi diferita in functie de modul cum este implementata
+coada.
+
+Mi-am creat propria coada de prioritate care pleaca de la structura de coada
+definita in Java, Queue in care introduc obiecte de tip NodCoada care retin un
+nod si costul catre acel nod, adaugarea in coada facandu-se in functie de
+costul unui NodCoada.
+
+Graful ce reprezinta, de fapt, harta l-am retinut sub forma unei matrice
+patratice ce retine obiecte de tip Strada. Strada retine costul aferent ei,
+limita de gabarit pentru aceasta si, daca exista, o lista cu obiecte de tip
+Ambuteiaj care ar genera costuri suplimentare pentru strada.
+
+Pentru metoda addStreet adaugam strada in matrice, pentru addRestriction
+adaugam in lista de ambuteiaje a unei strazi un nou ambuteiaj, initializand-o
+daca aceasta nu era deja, iar pentru drive apelam metoda dijkstra din clasa
+Vehicul.
+
+Am implementat in algoritmul lui Dijkstra utilizand CoadaPrioritate. Astfel
+am folosit un vector ce retinea distantele de la un nod de inceput catre
+celelalte noduri si o coada. Adaugam la inceput in coada un NodCoada pentru
+nodul de start. Cat timp nu era coada goala, actualizam vectorul de distante
+pe baza costului strazii cu cel mai mic cost si a distantelor anterioare. In
+paralel, aveam un vector ce retinea nodul anterior al nodului curent utilizat
+in final pentru a obtine punctele prin care trece vehiculul pana la sosire.
+
+Am citit datele din fisier utilizand o variabila Scanner si am scris in fisier
+utilizand FileWriter. La inceput am citit datele despre harta si am creat-o,
+iar apoi am executat fiecare comanda pana la finalul fisierului, scriind
+rezultatele in cazul metodei drive.
