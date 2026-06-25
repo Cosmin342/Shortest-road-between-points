@@ -19,7 +19,7 @@ jobs:
           java-version: '21'
 
       - name: Make script executable
-        run: chmod +x run-tests.sh
+        run: chmod +x run_tests.sh
 
       - name: Run tests
-        run: ./run-tests.sh
+        run: ./run_tests.sh
